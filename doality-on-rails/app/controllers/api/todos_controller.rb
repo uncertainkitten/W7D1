@@ -1,4 +1,4 @@
-class Api::TodosControllerController < ApplicationController
+class Api::TodosController < ApplicationController
   def show
     render json: Todo.find(params[:id])
   end
@@ -13,6 +13,7 @@ class Api::TodosControllerController < ApplicationController
       render json: @todo
     else
       render json: @todo.errors.full_messages, status: 422
+    end
   end
 
   def update
@@ -21,6 +22,7 @@ class Api::TodosControllerController < ApplicationController
       render json: @todo
     else
       render json: @todo.errors.full_messages, status: 422
+    end
   end
 
   def destroy
@@ -30,7 +32,9 @@ class Api::TodosControllerController < ApplicationController
   end
 
   private
+
   def todo_params
     params.require(:todo).permit(:title, :body, :done)
   end
+
 end
