@@ -38,3 +38,5 @@ ehthumbs.db
 Thumbs.db
 
 doality/node_modules
+doality-on-rails/node_modules
+doality-on-rails/tmp
