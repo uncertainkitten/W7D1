@@ -5,6 +5,15 @@ export const fetchTodos = () => {
   });
 };
 
+export const createTodo = (todo) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/todos',
+    data: {todo: todo},
+    dataType: JSON
+  });
+};
+
 export function uniqueId() {
   return new Date().getTime();
 }

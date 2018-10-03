@@ -16,3 +16,7 @@ export const receiveTodo = todo => ({
 export const fetchTodos = () => (dispatch, getState) => (
   APIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))
 );
+
+export const createTodo = todo => (dispatch) => {
+  return APIUtil.createTodo(todo).then(todo => dispatch(receiveTodo(todo)));
+};

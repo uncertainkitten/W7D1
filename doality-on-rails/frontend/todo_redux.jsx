@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import Store from './store/store';
-import {receiveTodos, receiveTodo, fetchTodos} from './actions/todo_actions';
+import {receiveTodos, receiveTodo, fetchTodos, createTodo} from './actions/todo_actions';
 import {allTodos} from './reducers/selectors.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,5 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.receiveTodo = receiveTodo;
   window.allTodos = allTodos;
   window.fetchTodos = fetchTodos;
+  window.createTodo = createTodo;
   ReactDOM.render(<Root store={store} />, document.getElementById('content'));
 });
